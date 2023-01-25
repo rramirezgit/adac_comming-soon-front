@@ -1,36 +1,153 @@
-import { Box, IconButton, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import logo from 'assets/img/logo.svg'
 import cel from 'assets/img/cel.svg'
 import styles from './app.module.css'
+import SocialMediaIcons from 'components/socialMediaIcons'
 import FormEmail from 'components/formEmail'
-import { SocialMediaIcons } from './icons'
 
 const App = (): JSX.Element => {
   return (
     <>
       <Box className={styles.content}>
-        <img src={logo} alt="Logo" className={styles.logo} />
-        <Box className={styles['content-info']}>
-          <Box className={styles.info}>
-            <Typography className={styles.title}>
+        <Box
+          sx={{
+            '& img': {
+              width: {
+                xs: '115.53px',
+                md: '10%'
+              },
+              height: {
+                xs: 'auto',
+                md: '8vh'
+              },
+              padding: {
+                xs: '52px  26px',
+                md: '2% 0 0 2.5%'
+              }
+            }
+          }}
+        >
+          <img src={logo} alt="Logo" className={styles.logo} />
+        </Box>
+        <Box
+          className={styles['content-info']}
+          sx={{
+            flexDirection: {
+              xs: 'column',
+              sm: 'column',
+              md: 'row',
+              lg: 'row'
+            }
+          }}
+        >
+          <Box
+            className={styles.info}
+            sx={{
+              width: {
+                xs: '328px',
+                sm: '328px',
+                md: '328px',
+                lg: '661px'
+              },
+              height: {
+                xs: 'auto',
+                sm: 'auto',
+                md: '85vh'
+              },
+              gap: {
+                xs: '20px',
+                md: '34px'
+              }
+            }}
+          >
+            <Typography
+              className={styles.title}
+              sx={{
+                fontSize: {
+                  xs: '40px',
+                  sm: '40px',
+                  md: '40px',
+                  lg: '58px'
+                },
+                lineHeight: {
+                  xs: '48px',
+                  sm: '48px',
+                  md: '60px',
+                  lg: '70px'
+                }
+              }}
+            >
               ¡Vuélvete la persona más interesante del lugar!
             </Typography>
-            <Typography className={styles.subtitle}>
+            <Typography
+              className={styles.subtitle}
+              sx={{
+                fontSize: {
+                  xs: '12px',
+                  md: '20.8333px'
+                },
+                lineHeight: {
+                  xs: '14px',
+                  md: '25px'
+                }
+              }}
+            >
               Únete a nuestro newsletter para recibir las noticias mas
               relevantes antes que cualquiera!
             </Typography>
             <FormEmail />
-            <Box className={styles.social}>
-              {SocialMediaIcons.map((item, index) => {
-                return (
-                  <IconButton aria-label="delete" key={index}>
-                    <img src={item.url} alt={item.name} key={index} />
-                  </IconButton>
-                )
-              })}
+            <Box
+              sx={{
+                display: {
+                  xs: 'none',
+                  md: 'flex'
+                }
+              }}
+            >
+              <SocialMediaIcons />
             </Box>
           </Box>
-          <img src={cel} alt="Logo" className={styles.cel} />
+          <Box
+            sx={{
+              '& img': {
+                width: {
+                  xs: '373.99px',
+                  sm: '373.99px',
+                  md: '530px'
+                },
+                height: {
+                  xs: '435.7px',
+                  sm: '435.7px',
+                  md: '617.44px'
+                },
+                minWidth: {
+                  xs: '373.99px',
+                  sm: '373.99px',
+                  md: '530px'
+                },
+                marginTop: {
+                  xs: '30px',
+                  md: '0'
+                }
+              }
+            }}
+          >
+            <img src={cel} alt="Logo" className={styles.cel} />
+          </Box>
+          <Box
+            sx={{
+              display: {
+                xs: 'flex',
+                md: 'none'
+              },
+              marginBottom: {
+                xs: '30px',
+                md: '0'
+              }
+            }}
+          >
+            <SocialMediaIcons />
+          </Box>
         </Box>
       </Box>
     </>

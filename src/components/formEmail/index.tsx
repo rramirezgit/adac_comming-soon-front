@@ -29,35 +29,49 @@ const FormEmail = (): JSX.Element => {
         validationSchema={validationSchema}
       >
         {({ errors }) => (
-          <Form className={Styles.form}>
-            <Box className={Styles.content}>
-              <Field
-                name="email"
-                placeholder="Doe@email.com"
-                label="Email"
-                className={Styles.input}
-                as={MyInput}
-              />
-              <ErrorMessage
-                name="email"
-                component="span"
-                className={
-                  errors?.email === 'Se ha enviado exitosamente!'
-                    ? Styles.errorActive
-                    : Styles.error
+          <Form>
+            <Box
+              className={Styles.form}
+              sx={{
+                flexDirection: {
+                  xs: 'column',
+                  md: 'row'
+                },
+                gap: {
+                  xs: '23px',
+                  md: '14px'
                 }
-              />
-            </Box>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              classes={{
-                root: Styles.button
               }}
             >
-              JOIN
-            </Button>
+              <Box className={Styles.content}>
+                <Field
+                  name="email"
+                  placeholder="Doe@email.com"
+                  label="Email"
+                  className={Styles.input}
+                  as={MyInput}
+                />
+                <ErrorMessage
+                  name="email"
+                  component="span"
+                  className={
+                    errors?.email === 'Se ha enviado exitosamente!'
+                      ? Styles.errorActive
+                      : Styles.error
+                  }
+                />
+              </Box>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                classes={{
+                  root: Styles.button
+                }}
+              >
+                JOIN
+              </Button>
+            </Box>
           </Form>
         )}
       </Formik>
