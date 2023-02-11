@@ -16,7 +16,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json'
   },
-  plugins: ['react'],
+  plugins: ['react', '@typescript-eslint', 'testing-library'],
   rules: {
     '@typescript-eslint/strict-boolean-expressions': 'off'
   },
