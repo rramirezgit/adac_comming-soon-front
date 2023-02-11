@@ -34,9 +34,7 @@ const App = (): JSX.Element => {
           sx={{
             flexDirection: {
               xs: 'column',
-              sm: 'column',
-              md: 'row',
-              lg: 'row'
+              md: 'row'
             }
           }}
         >
@@ -45,13 +43,10 @@ const App = (): JSX.Element => {
             sx={{
               width: {
                 xs: '328px',
-                sm: '328px',
-                md: '328px',
                 lg: '661px'
               },
               height: {
                 xs: 'auto',
-                sm: 'auto',
                 md: '85vh'
               },
               gap: {
@@ -65,13 +60,10 @@ const App = (): JSX.Element => {
               sx={{
                 fontSize: {
                   xs: '40px',
-                  sm: '40px',
-                  md: '40px',
                   lg: '58px'
                 },
                 lineHeight: {
                   xs: '48px',
-                  sm: '48px',
                   md: '60px',
                   lg: '70px'
                 }
@@ -112,17 +104,14 @@ const App = (): JSX.Element => {
               '& img': {
                 width: {
                   xs: '373.99px',
-                  sm: '373.99px',
                   md: '530px'
                 },
                 height: {
                   xs: '435.7px',
-                  sm: '435.7px',
                   md: '617.44px'
                 },
                 minWidth: {
                   xs: '373.99px',
-                  sm: '373.99px',
                   md: '530px'
                 },
                 marginTop: {
