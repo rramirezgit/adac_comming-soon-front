@@ -1,11 +1,21 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, useMediaQuery } from '@mui/material'
 import logo from 'assets/img/logo.svg'
-import cel from 'assets/img/cel.svg'
+import cel from 'assets/img/cel.json'
 import styles from './app.module.css'
 import SocialMediaIcons from 'components/socialMediaIcons'
 import FormEmail from 'components/formEmail'
-
+import Lottie from 'react-lottie'
 const App = (): JSX.Element => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: cel,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
+
+  const matches = useMediaQuery('(min-width:900px)')
   return (
     <>
       <Box className={styles.content}>
@@ -132,7 +142,13 @@ const App = (): JSX.Element => {
               }
             }}
           >
-            <img src={cel} alt="Logo" className={styles.cel} />
+            <Box className={styles.contentLottie}>
+              <Lottie
+                options={defaultOptions}
+                width={matches ? '297px' : '190.52px'}
+                height={matches ? '601.63px' : '385.93px'}
+              />
+            </Box>
           </Box>
           <Box
             sx={{

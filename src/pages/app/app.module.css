@@ -46,3 +46,18 @@
   font-weight: 325 !important;
   color: #29394e !important;
 }
+
+.contentLottie {
+  background: url(../../assets/img/Group.svg) no-repeat center center;
+  background-size: contain;
+  width: 583.03px;
+  height: 674.22px;
+}
+
+@media (max-width: 900px) {
+  .contentLottie {
+    margin-top: 44px;
+    width: 373.99px;
+    height: 435.7px;
+  }
+}
